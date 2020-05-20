@@ -10,13 +10,15 @@ def caesar_cipher(string, shift)
 
       element_index += shift
       element_index -= alphabet_downcase.length until element_index < 25 # alphabet's length counting from 0
-      new_string += alphabet_downcase[element_index].to_s
+      new_element = alphabet_downcase[element_index].to_s
+      new_string += new_element
     elsif alphabet_upcase.include?(element) # only upcase letters
       element_index = alphabet_upcase.index(element)
 
       element_index += shift
       element_index -= alphabet_upcase.length until element_index < 25 # alphabet's length counting from 0
-      new_string += alphabet_upcase[element_index].to_s
+      new_element = alphabet_upcase[element_index]
+      new_string += new_element
     else # other characters
       new_string += element
     end
